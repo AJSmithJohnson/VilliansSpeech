@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class StatManager
 {
-
+    static StatManager _instance;
+    public static StatManager Instance
+    {
+        get
+        {
+            if(_instance == null)
+            {
+                _instance = new StatManager();
+            }
+            return _instance;
+        }
+    }
     public float cash = 0;
     float _hysteria
     {
@@ -22,7 +33,7 @@ public class StatManager
     }
     public float policeProgress = 0;
     List<CityZone> _zones = null;
-    List<CityZone> zones
+    public List<CityZone> zones
     {
         get
         {
@@ -37,6 +48,10 @@ public class StatManager
             return _zones;
         }
     }
+
+    public int robbers = 0;
+    public int thugs = 0;
+    public int pols = 0;
 
     float calcTotalHysteria()
     {
@@ -57,5 +72,4 @@ public class CityZone
 
 }
 
-public enum Henchman { thug, robber, politician };
-public enum KeyItem { battery, focusingCrystal, artillery };
+public enum keyItems {rocket, fuel, spacesuit, flag};
