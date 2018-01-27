@@ -5,7 +5,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
-#region ThoughtMoveVariables
+    #region ThoughtMoveVariables
+
+    public string myText = "";
+    public GameObject submitBttn;
+
     private bool mouseDown = false;
     
     private Vector3 startMousePos;
@@ -145,6 +149,7 @@ public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 
             if (restrictX)
             {
+                return;
                 if (transform.localPosition.x < 0)
                     fakeX = 0 - (ParentRT.rect.width / 2) + myWidth;
                 else
@@ -156,6 +161,7 @@ public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 
             if (restrictY)
             {
+                return;
                 if (transform.localPosition.y < 0)
                     fakeY = 0 - (ParentRT.rect.height / 2) + myHeight;
                 else
@@ -169,7 +175,7 @@ public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         if (!mouseDown)
         {
 
-            transform.localPosition = Vector3.Lerp(transform.localPosition, rectObjectPosition, .1f*Time.deltaTime);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, rectObjectPosition, 2f*Time.deltaTime);
             
 
 
@@ -177,25 +183,33 @@ public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
         
         if(dist <= radius)
         {
-            if(scriptSelector == 1)
+            switch (scriptSelector)
             {
-                methodScript.value = 1;
-            }else if(scriptSelector == 2)
-            {
-                bluffScript.value = 2;
+                case 1:
+                    methodScript.value = 1;
+                    methodScript.text.text = myText;
+                    break;
+                case 2:
+                    bluffScript.value = 2;
+                    bluffScript.text.text = myText;
+                    break;
+                case 3:
+                    demandScript.value = 3;
+                    demandScript.text.text = myText;
+                    break;
+                case 4:
+                    threatScript.value = 4;
+                    threatScript.text.text = myText;
+                    break;
+                case 5:
+                    locationScript.value = 5;
+                    locationScript.text.text = myText;
+                    break;
             }
-            else if (scriptSelector == 3)
+            if(methodScript.value != -1 && bluffScript.value != -1 && demandScript.value != -1 && threatScript.value != -1 && locationScript.value != -1)
             {
-                demandScript.value = 3;
+                submitBttn.SetActive(true);
             }
-            else if (scriptSelector == 4)
-            {
-                threatScript.value = 4;
-            }
-            else if (scriptSelector == 5)
-            {
-                locationScript.value = 5;
-            }  
             
         }
     }
