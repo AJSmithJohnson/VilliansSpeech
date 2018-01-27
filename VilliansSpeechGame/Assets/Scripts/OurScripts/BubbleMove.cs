@@ -5,8 +5,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
+#region ThoughtMoveVariables
     private bool mouseDown = false;
+    
     private Vector3 startMousePos;
+    
     private Vector3 startpos;
     private bool restrictX;
     private bool restrictY;
@@ -14,26 +17,103 @@ public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     private float fakeY;
     private float myWidth;
     private float myHeight;
-    public Vector3 startingPosition;
     public RectTransform ParentRT;
     public RectTransform MyRect;
 
 
-    public Vector3 position;
+    private Vector3 rectObjectPosition;
+    private Vector3 boable;
+    private Vector3 vectorMover;
+    #endregion
+
+    public int catagory;
+    public int value;
+    
+    /// <summary>
+    /// For the bluff box
+    /// </summary>
+    public BoxController bluffScript;
+    public GameObject bluffBox;
+
+    /// <summary>
+    /// For the bluff box
+    /// </summary>
+    public BoxController methodScript;
+    public GameObject    methodBox;
+
+    /// <summary>
+    /// For the bluff box
+    /// </summary>
+    public BoxController demandScript;
+    public GameObject    demandBox;
+
+    /// <summary>
+    /// For the bluff box
+    /// </summary>
+    public BoxController threatScript;
+    public GameObject    threatBox;
+
+    /// <summary>
+    /// For the bluff box
+    /// </summary>
+    public BoxController locationScript;
+    public GameObject    locationBox;
+
+    public Vector3 target;
+
+    public int scriptSelector;
+    public int radius = 10;
+
     // Use this for initialization
     void Start()
     {
-        startingPosition = transform.position;
+        rectObjectPosition = transform.localPosition;
+        boable.x = 2;
+        boable.y = 2;
+        boable.z = 0;
+        
         myWidth = (MyRect.rect.width + 5) / 2;
         myHeight = (MyRect.rect.height + 5) / 2;
+        SelectCollision();
+        
     }
 
-    
+    private void SelectCollision()
+    {
+        if(catagory == 2)
+        {
+            target = bluffBox.transform.position;
+            scriptSelector = 2; 
+        }
+        else if(catagory == 1)
+        {
+            target = methodBox.transform.position;
+            scriptSelector = 1;
+        }
+        else if (catagory == 3)
+        {
+            target = demandBox.transform.position;
+            scriptSelector = 3;
+        }
+        else if (catagory == 4)
+        {
+            target = threatBox.transform.position;
+            scriptSelector = 4;
+        }
+        else if (catagory == 5)
+        {
+            target = locationBox.transform.position;
+            scriptSelector = 5;
+        }
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
+        
         mouseDown = true;
-        startpos = transform.position;
+        startpos = transform.localPosition;
         startMousePos = Input.mousePosition;
+        print(startMousePos);
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -44,12 +124,14 @@ public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
     // Update is called once per frame
     void Update()
     {
+        float dist = Vector3.Distance(target, transform.position);
         if (mouseDown)
         {
             Vector3 currentPos = Input.mousePosition;
             Vector3 diff = currentPos - startMousePos;
+            
             Vector3 pos = startpos + diff;
-            transform.position = pos;
+            transform.position = currentPos;
 
             if (transform.localPosition.x < 0 - ((ParentRT.rect.width / 2) - myWidth) || transform.localPosition.x > ((ParentRT.rect.width / 2) - myWidth))
                 restrictX = true;
@@ -82,25 +164,39 @@ public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
                 Vector3 ypos = new Vector3(transform.localPosition.x, fakeY, 0.0f);
                 transform.localPosition = ypos;
             }
-
+            
         }
         if (!mouseDown)
         {
-            float dist = Vector3.Distance(transform.position, startingPosition);
-            position.x += dist;
-            position.y += dist;
-            if(position.x > startingPosition.x)
-            {
-                position.x += dist;
-                
-            }
-            if (position.y > startingPosition.y)
-            {
-                position.y += dist;
-                
-            }
-            transform.position = position;
 
+            transform.localPosition = Vector3.Lerp(transform.localPosition, rectObjectPosition, .1f*Time.deltaTime);
+            
+
+
+        }
+        
+        if(dist <= radius)
+        {
+            if(scriptSelector == 1)
+            {
+                methodScript.value = 1;
+            }else if(scriptSelector == 2)
+            {
+                bluffScript.value = 2;
+            }
+            else if (scriptSelector == 3)
+            {
+                demandScript.value = 3;
+            }
+            else if (scriptSelector == 4)
+            {
+                threatScript.value = 4;
+            }
+            else if (scriptSelector == 5)
+            {
+                locationScript.value = 5;
+            }  
+            
         }
     }
 
