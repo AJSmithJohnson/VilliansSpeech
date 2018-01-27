@@ -17,35 +17,31 @@ public class StatManager
         }
     }
     public float cash = 0;
-    float _hysteria
+    public float hysteria
     {
         get
         {
             return calcTotalHysteria();
         }
     }
-    public float hysteria
-    {
-        get
-        {
-            return _hysteria;
-        }
-    }
     public float policeProgress = 0;
-    List<CityZone> _zones = null;
     public List<CityZone> zones
     {
         get
         {
-            if (_zones == null)
+            if (zones == null)
             {
-                _zones = new List<CityZone>();
-                _zones.Add(new CityZone());
-                _zones.Add(new CityZone());
-                _zones.Add(new CityZone());
-                _zones.Add(new CityZone());
+                zones = new List<CityZone>();
+                zones.Add(new CityZone());
+                zones.Add(new CityZone());
+                zones.Add(new CityZone());
+                zones.Add(new CityZone());
             }
-            return _zones;
+            return zones;
+        }
+        set
+        {
+            zones = value;
         }
     }
 
@@ -62,6 +58,21 @@ public class StatManager
         }
         averageHysteria /= 4;
         return averageHysteria;
+    }
+
+    public void terrorizeZone(int targetZone, float addedHysteria)
+    {
+        zones[targetZone].hysteria += addedHysteria;
+    }
+
+    public void relaxZone(int targetZone, float addedHysteria)
+    {
+        zones[targetZone].hysteria -= addedHysteria;
+    }
+
+    public void calcMoney()
+    {
+        cash += robbers * 10 + thugs * 20 - pols * 10;
     }
 }
 
