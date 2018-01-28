@@ -15,17 +15,40 @@ public class SchemeExecuter : MonoBehaviour {
     {
         defaultResults(dist.evidenceProduced);
 
-        if ((StatManager.Instance.hysteria + StatManager.Instance.pols) * dist.successMod > plan.hysteriaNeeded)
-        {
-            return new Result();//success
+        if ((StatManager.Instance.hysteria + StatManager.Instance.pols) * dist.successMod >= plan.hysteriaNeeded)
+        {//success
+            switch (demandBox.value)
+            {
+                case 1:
+                    return Result.gotMoney;
+                case 2:
+                    return Result.gotFlag;
+                case 3:
+                    return Result.gotSpacesuit;
+                case 4:
+                    return Result.gotRocket;
+                default:
+                    return new Result();                    
+            }
         }else if (bluff)
-        {
+        {//bluff failed
             StatManager.Instance.relaxZone(plan.targetZone, plan.hysteriaProvided);
-            return new Result();//bluff failed
+            return Result.bluffFail;
         }
         StatManager.Instance.terrorizeZone(plan.targetZone, plan.hysteriaProvided);
         StatManager.Instance.policeProgress += (StatManager.Instance.thugs * 20 + StatManager.Instance.robbers * 10 - StatManager.Instance.pols * 10);
-        return new Result();//enacted plan
+
+        switch (threatBox.value)
+        {
+            case 1:
+                return Result.kidnap;
+            case 2:
+                return Result.poison;
+            case 3:
+                return Result.demolition;
+            default:
+                return new Result();
+        }
 
         
     }
@@ -58,7 +81,10 @@ public class SchemeExecuter : MonoBehaviour {
 
         plan.targetZone = locationBox.value - 1;
 
-
+        print("money " + StatManager.Instance.cash);
+        print("hysteria " + StatManager.Instance.hysteria);
+        print("evidence " + StatManager.Instance.policeProgress);
+        print(calculateSuccess(plan, dist, bluff));
     }
 
     public bool calculateLoseState()

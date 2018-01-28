@@ -16,7 +16,15 @@ public class StatManager
             return _instance;
         }
     }
-    public float cash = 0;
+    float _cash = 0;
+    public float cash
+    {
+        get { return _cash; }
+        set
+        {
+            _cash = (value >= 0) ? value : 0;
+        }
+    }
     public float hysteria
     {
         get
@@ -25,29 +33,28 @@ public class StatManager
         }
     }
     public float policeProgress = 0;
+    public List<CityZone> _zones;
     public List<CityZone> zones
     {
         get
         {
-            if (zones == null)
+            if (_zones == null)
             {
-                zones = new List<CityZone>();
-                zones.Add(new CityZone());
-                zones.Add(new CityZone());
-                zones.Add(new CityZone());
-                zones.Add(new CityZone());
+                _zones = new List<CityZone>();
+                _zones.Add(new CityZone());
+                _zones.Add(new CityZone());
+                _zones.Add(new CityZone());
+                _zones.Add(new CityZone());
             }
-            return zones;
-        }
-        set
-        {
-            zones = value;
+            return _zones;
         }
     }
 
     public int robbers = 0;
     public int thugs = 0;
     public int pols = 0;
+
+    public Result nextResult;
 
     float calcTotalHysteria()
     {
@@ -62,6 +69,7 @@ public class StatManager
 
     public void terrorizeZone(int targetZone, float addedHysteria)
     {
+        Debug.Log(zones.Count);
         zones[targetZone].hysteria += addedHysteria;
     }
 
@@ -79,7 +87,14 @@ public class StatManager
 public class CityZone
 {
 
-    public float hysteria = 0;
+    public float _hysteria = 0;
+    public float hysteria
+    {
+        get { return _hysteria; }
+        set{
+            _hysteria = (value >= 0) ? value : 0;
+        }
+    }
 
 }
 

@@ -186,23 +186,23 @@ public class BubbleMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
             switch (scriptSelector)
             {
                 case 1:
-                    methodScript.value = 1;
+                    methodScript.value = value;
                     methodScript.text.text = myText;
                     break;
                 case 2:
-                    bluffScript.value = 2;
+                    bluffScript.value = value;
                     bluffScript.text.text = myText;
                     break;
                 case 3:
-                    demandScript.value = 3;
+                    demandScript.value = value;
                     demandScript.text.text = myText;
                     break;
                 case 4:
-                    threatScript.value = 4;
+                    threatScript.value = value;
                     threatScript.text.text = myText;
                     break;
                 case 5:
-                    locationScript.value = 5;
+                    locationScript.value = value;
                     locationScript.text.text = myText;
                     break;
             }

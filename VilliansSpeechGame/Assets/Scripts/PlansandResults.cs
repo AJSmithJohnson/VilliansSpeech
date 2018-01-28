@@ -13,10 +13,7 @@ public class Plan {
      */
 }
 
-public class Result
-{
-
-}
+public enum Result{gotMoney, gotRocket, gotFlag, gotSpacesuit, bluffFail, poison, kidnap, demolition};
 
 public class DistributionMethod
 {
