@@ -896,6 +896,7 @@ GameObject:
   - component: {fileID: 70281515}
   - component: {fileID: 70281517}
   - component: {fileID: 70281516}
+  - component: {fileID: 70281518}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -960,6 +961,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70281514}
+--- !u!114 &70281518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 70281514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252202b2ef1fac9459e93ff7483b0bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalMoney: 0
+  moneyText: {fileID: 70281516}
 --- !u!1 &78257640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1790,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!1 &348752057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,7 +2065,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 390851576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 480227f7444b8a148999c29f5535769b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ba9e35ef0c62504587fb35cfe47db4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &455354006
@@ -4706,6 +4724,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!114 &952542638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4746,7 +4768,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 952542637}
-        m_MethodName: hidecityPanel
+        m_MethodName: HidecityPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4937,7 +4959,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1004649896}
-        m_MethodName: showcityPanel
+        m_MethodName: ShowcityPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1004649896}
+        m_MethodName: CheckAndHidePlans
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4996,6 +5029,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!1 &1037611060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,6 +5085,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!114 &1037611063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5088,7 +5129,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1037611062}
-        m_MethodName: hidehentchmenPanel
+        m_MethodName: HidehentchmenPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5551,7 +5592,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1081081484}
-        m_MethodName: showhentchmenPanel
+        m_MethodName: ShowhentchmenPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5610,6 +5651,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!1 &1090289362
 GameObject:
   m_ObjectHideFlags: 0
@@ -5842,7 +5887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1124249843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5949,6 +5994,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!114 &1134689127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5989,7 +6038,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1134689126}
-        m_MethodName: hideNewsPanel
+        m_MethodName: HideNewsPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7997,7 +8046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalMoney: 0
-  moneyText: {fileID: 0}
+  moneyText: {fileID: 1569766929}
 --- !u!1 &1596938530
 GameObject:
   m_ObjectHideFlags: 0
@@ -8014,7 +8063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1596938531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8134,7 +8183,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Corrupt down to the bone. These politicians will downplay any threats you
-    make to the city resulting in.
+    make to the city resulting in less hysteria.
 --- !u!222 &1598032630
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9980,7 +10029,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1900981668}
-        m_MethodName: showNewsPanel
+        m_MethodName: ShowNewsPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10039,6 +10088,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!1 &1911601795
 GameObject:
   m_ObjectHideFlags: 0
@@ -10573,7 +10626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2028743255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10619,6 +10672,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!114 &2028743257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10812,6 +10869,10 @@ MonoBehaviour:
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
+  fuel: {fileID: 1790986501}
+  spaceSuit: {fileID: 1844949231}
+  rocket: {fileID: 1462362129}
+  villiansLair: {fileID: 641073226}
 --- !u!114 &2048139873
 MonoBehaviour:
   m_ObjectHideFlags: 0

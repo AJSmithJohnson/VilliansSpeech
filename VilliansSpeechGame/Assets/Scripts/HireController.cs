@@ -19,15 +19,18 @@ public class HireController : MonoBehaviour {
     {
         if(minionType == 1)
         {
-            mtController.totalMoney -= 5;
+            StatManager.Instance.cash -= 5;
+           // mtController.totalMoney -= 5;
         }
         else if (minionType == 2)
         {
-            mtController.totalMoney -= 15;
+            StatManager.Instance.cash -= 15;
+           // mtController.totalMoney -= 15;
         }
         else if (minionType == 3)
         {
-            mtController.totalMoney -= 50;
+            StatManager.Instance.cash -= 50;
+            //mtController.totalMoney -= 50;
         }
     }
 }

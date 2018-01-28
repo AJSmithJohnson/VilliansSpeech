@@ -5,6 +5,10 @@ using UnityEngine;
 public class StatManager
 {
     static StatManager _instance;
+    float _cash = 0;
+    public bool hasRocket;
+    public bool hasFuel;
+    public bool hasSpacesuit;
     public static StatManager Instance
     {
         get
@@ -16,7 +20,7 @@ public class StatManager
             return _instance;
         }
     }
-    float _cash = 0;
+    
     public float cash
     {
         get { return _cash; }
@@ -66,7 +70,7 @@ public class StatManager
         averageHysteria /= 4;
         return averageHysteria;
     }
-
+    
     public void terrorizeZone(int targetZone, float addedHysteria)
     {
         Debug.Log(zones.Count);
@@ -81,6 +85,11 @@ public class StatManager
     public void calcMoney()
     {
         cash += robbers * 10 + thugs * 20 - pols * 10;
+    }
+
+    public void BigMoney()
+    {
+        cash += 4000;
     }
 }
 

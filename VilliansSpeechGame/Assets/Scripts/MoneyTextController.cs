@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MoneyTextController : MonoBehaviour {
-    public int totalMoney;
+    public float totalMoney;
     public Text moneyText;
 	// Use this for initialization
 	void Start () {
 
-        totalMoney = 50;
+        totalMoney = StatManager.Instance.cash;
 
         moneyText = GetComponentInParent<Text>();
         moneyText.text =  totalMoney.ToString();
@@ -17,6 +17,6 @@ public class MoneyTextController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        moneyText.text = totalMoney.ToString();
+        moneyText.text = StatManager.Instance.cash.ToString();
     }
 }
