@@ -89,7 +89,12 @@ public class StatManager
 
     public void BigMoney()
     {
-        cash += 4000;
+        cash += 100;
+    }
+
+    public void Reset()
+    {
+        _instance = new StatManager();
     }
 }
 
