@@ -9128,10 +9128,10 @@ MonoBehaviour:
   napMayor: {fileID: 361234192}
   poison: {fileID: 925646962}
   evilPlanPanel: {fileID: 1124249842}
-  rocketImg: {fileID: 0}
-  flagImg: {fileID: 0}
-  spaceSuitImg: {fileID: 0}
-  moneyImg: {fileID: 0}
+  rocketImg: {fileID: 515390015}
+  flagImg: {fileID: 764010846}
+  spaceSuitImg: {fileID: 28233112}
+  moneyImg: {fileID: 648680596}
 --- !u!4 &1485333889
 Transform:
   m_ObjectHideFlags: 0
