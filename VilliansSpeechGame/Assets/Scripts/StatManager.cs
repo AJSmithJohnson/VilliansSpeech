@@ -73,7 +73,7 @@ public class StatManager
     
     public void terrorizeZone(int targetZone, float addedHysteria)
     {
-        Debug.Log(zones.Count);
+        Debug.Log(targetZone);
         zones[targetZone].hysteria += addedHysteria;
     }
 

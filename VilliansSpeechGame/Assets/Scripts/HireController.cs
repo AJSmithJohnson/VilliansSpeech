@@ -5,6 +5,7 @@ using UnityEngine;
 public class HireController : MonoBehaviour {
     public MoneyTextController mtController;
     public int minionType;
+    
 	// Use this for initialization
 	void Start () {
 		
@@ -17,20 +18,36 @@ public class HireController : MonoBehaviour {
 
     public void SpendMoney()
     {
-        if(minionType == 1)
+        if(StatManager.Instance.cash >= 5)
         {
-            StatManager.Instance.cash -= 5;
-           // mtController.totalMoney -= 5;
+            if (minionType == 1)
+            {
+                StatManager.Instance.cash -= 5;
+                StatManager.Instance.thugs++;
+                //This is here for debugging purposes will be removed
+                // mtController.totalMoney -= 5;
+                //StatManager.Instance.terrorizeZone(1, 500);
+                //Debug.Log(StatManager.Instance.hysteria);
+            }
         }
-        else if (minionType == 2)
+        if(StatManager.Instance.cash >= 15)
         {
-            StatManager.Instance.cash -= 15;
-           // mtController.totalMoney -= 15;
+           if (minionType == 2)
+            {
+                StatManager.Instance.cash -= 15;
+                StatManager.Instance.robbers++;
+                // mtController.totalMoney -= 15;
+            }
         }
-        else if (minionType == 3)
+        if(StatManager.Instance.cash >= 50)
         {
-            StatManager.Instance.cash -= 50;
-            //mtController.totalMoney -= 50;
+            if (minionType == 3)
+            {
+                StatManager.Instance.cash -= 50;
+                StatManager.Instance.pols++;
+                //mtController.totalMoney -= 50;
+            }
         }
+        
     }
 }

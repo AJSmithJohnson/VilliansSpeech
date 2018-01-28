@@ -17,6 +17,6 @@ public class MoneyTextController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        moneyText.text = StatManager.Instance.cash.ToString();
+        moneyText.text = ("$" + StatManager.Instance.cash.ToString()); 
     }
 }

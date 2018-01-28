@@ -7,9 +7,9 @@ public class Initializer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         StatManager.Instance.cash = 100;
-        StatManager.Instance.hasFuel = true;
-        StatManager.Instance.hasRocket = true;
-        StatManager.Instance.hasSpacesuit = true;
+        StatManager.Instance.hasFuel = false;
+        StatManager.Instance.hasRocket = false;
+        StatManager.Instance.hasSpacesuit = false;
         StatManager.Instance.robbers = 0;
         StatManager.Instance.thugs = 0;
         StatManager.Instance.pols= 0;
