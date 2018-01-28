@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SchemeExecuter : MonoBehaviour {
 
@@ -12,7 +14,18 @@ public class SchemeExecuter : MonoBehaviour {
     public BoxController bluffBox;
     public PanelsHolder panelsHolder;
 
-	public Result calculateSuccess(Plan plan, DistributionMethod dist, bool bluff = false)
+    public GameObject suit;
+    public GameObject flag;
+    public GameObject rocket;
+
+    public GameObject winScreen;
+    public GameObject riotScreen;
+    public GameObject arrestScreen;
+
+    public Text hyst;
+    public Text arst;
+
+    public Result calculateSuccess(Plan plan, DistributionMethod dist, bool bluff = false)
     {
         Debug.Log(plan.targetZone);
         defaultResults(dist.evidenceProduced);
@@ -125,8 +138,12 @@ public class SchemeExecuter : MonoBehaviour {
         //print(calculateSuccess(plan, dist, bluff));
     }
 
-    public bool calculateLoseState()
+    public void calculateLoseState()
     {
+        if (rocket.activeInHierarchy && flag.activeInHierarchy && suit.activeInHierarchy)
+        {
+            winScreen.SetActive(true);
+        }
         if (StatManager.Instance.hysteria > 100)
         {
             //lose due to rioting
@@ -134,22 +151,33 @@ public class SchemeExecuter : MonoBehaviour {
             //Create new panel
 
             //Two buttons to start over
-            
+
             //Or to Exit the game
-            return true;
+            riotScreen.SetActive(true);
         }
         if(StatManager.Instance.policeProgress > 100)
         {
             //lose due to police activity
-            return true;
+            arrestScreen.SetActive(true);
         }
-        return false;
     }
 
     void defaultResults(int evidence)
     {
         StatManager.Instance.policeProgress += evidence;
         StatManager.Instance.calcMoney();
+    }
+
+    public void updateText()
+    {
+        hyst.text = StatManager.Instance.hysteria.ToString();
+        arst.text = StatManager.Instance.policeProgress.ToString();
+    }
+
+    public void reload()
+    {
+        StatManager.Instance.Reset();
+        SceneManager.LoadScene(1);
     }
 
 }
