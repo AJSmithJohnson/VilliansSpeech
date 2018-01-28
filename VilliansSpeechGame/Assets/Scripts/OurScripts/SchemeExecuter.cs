@@ -142,6 +142,7 @@ public class SchemeExecuter : MonoBehaviour {
     {
         if (rocket.activeInHierarchy && flag.activeInHierarchy && suit.activeInHierarchy)
         {
+            GameObject.FindObjectOfType<AudioController>().playAudio(6);
             winScreen.SetActive(true);
         }
         if (StatManager.Instance.hysteria > 100)
@@ -153,11 +154,13 @@ public class SchemeExecuter : MonoBehaviour {
             //Two buttons to start over
 
             //Or to Exit the game
+            GameObject.FindObjectOfType<AudioController>().playAudio(2);
             riotScreen.SetActive(true);
         }
         if(StatManager.Instance.policeProgress > 100)
         {
             //lose due to police activity
+            GameObject.FindObjectOfType<AudioController>().playAudio(0);
             arrestScreen.SetActive(true);
         }
     }

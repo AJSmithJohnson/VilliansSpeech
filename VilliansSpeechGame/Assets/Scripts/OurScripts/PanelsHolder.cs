@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PanelsHolder : MonoBehaviour
 {
-
+    public AudioController acScript;
     public GameObject newsPanel;
     public GameObject hentchmenPanel;
     public GameObject cityPanel;
@@ -46,11 +46,13 @@ public class PanelsHolder : MonoBehaviour
 
     public void hideDesBuilding()
     {
+       
         //evilPlanPanel.SetActive(false);
         desBuilding.SetActive(false);
     }
     public void showNapMayor()
     {
+        GameObject.FindObjectOfType<AudioController>().playAudio(3);
         cityPanel.SetActive(false);
         // evilPlanPanel.SetActive(true);
         napMayor.SetActive(true);
@@ -64,6 +66,7 @@ public class PanelsHolder : MonoBehaviour
     }
     public void showPoison()
     {
+        GameObject.FindObjectOfType<AudioController>().playAudio(5);
         cityPanel.SetActive(false);
         // evilPlanPanel.SetActive(true);
         poison.SetActive(true);
@@ -151,6 +154,7 @@ public class PanelsHolder : MonoBehaviour
                    
     public void hideMakePay()
     {
+        GameObject.FindObjectOfType<AudioController>().playAudio(7);
         makePay.SetActive(false);
 
     }
@@ -165,14 +169,17 @@ public class PanelsHolder : MonoBehaviour
     }
     public void ShowNewsPanel()
     {
+        
         newsPanel.SetActive(true);
     }
     public void HideNewsPanel()
     {
+        GameObject.FindObjectOfType<AudioController>().playAudio(4);
         newsPanel.SetActive(false);
     }
     public void ShowhentchmenPanel()
     {
+        GameObject.FindObjectOfType<AudioController>().playAudio(1);
         hentchmenPanel.SetActive(true); 
     }               
     public void HidehentchmenPanel()

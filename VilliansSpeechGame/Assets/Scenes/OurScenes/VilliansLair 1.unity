@@ -1445,6 +1445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -2222,6 +2223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -2337,6 +2339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -2619,6 +2622,7 @@ GameObject:
   - component: {fileID: 390851578}
   - component: {fileID: 390851577}
   - component: {fileID: 390851582}
+  - component: {fileID: 390851583}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2707,6 +2711,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba9e35ef0c62504587fb35cfe47db4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &390851583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 390851576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13302f928a54e9342898a89f9e03ae0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 257ef42cf85ec4042887696f4c8c0137, type: 3}
+  - {fileID: 8300000, guid: cf1ba7d45553ef64f92e47cad80fa9b6, type: 3}
+  - {fileID: 8300000, guid: 31ef8c9711c735b4cad9ca6b914b72c6, type: 3}
+  - {fileID: 8300000, guid: a073f3ec5b704c945822ab7267213646, type: 3}
+  - {fileID: 8300000, guid: 7c18180316211f841ad694ee7993f762, type: 3}
+  - {fileID: 8300000, guid: ee5d5b9c274edc641a41a4ba8b1554d8, type: 3}
+  - {fileID: 8300000, guid: 4a94621370fe9344a9d1e30fc4917794, type: 3}
+  - {fileID: 8300000, guid: fa98872db176d004ba9edcd54f75bb08, type: 3}
 --- !u!1 &404192218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,6 +2780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -3165,6 +3190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -5346,6 +5372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -5763,6 +5790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -6476,6 +6504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -6795,6 +6824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -6865,6 +6895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -7534,6 +7565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -7854,6 +7886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -7924,6 +7957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -8328,6 +8362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -9266,6 +9301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -9432,6 +9468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -9891,6 +9928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 1897813252}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -12225,6 +12263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -13257,6 +13296,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1897813251}
   - component: {fileID: 1897813250}
+  - component: {fileID: 1897813253}
+  - component: {fileID: 1897813252}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -13327,6 +13368,106 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1897813252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1897813249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13302f928a54e9342898a89f9e03ae0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 257ef42cf85ec4042887696f4c8c0137, type: 3}
+  - {fileID: 8300000, guid: cf1ba7d45553ef64f92e47cad80fa9b6, type: 3}
+  - {fileID: 8300000, guid: 31ef8c9711c735b4cad9ca6b914b72c6, type: 3}
+  - {fileID: 8300000, guid: a073f3ec5b704c945822ab7267213646, type: 3}
+  - {fileID: 8300000, guid: 7c18180316211f841ad694ee7993f762, type: 3}
+  - {fileID: 8300000, guid: ee5d5b9c274edc641a41a4ba8b1554d8, type: 3}
+  - {fileID: 8300000, guid: 4a94621370fe9344a9d1e30fc4917794, type: 3}
+  - {fileID: 8300000, guid: fa98872db176d004ba9edcd54f75bb08, type: 3}
+--- !u!82 &1897813253
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1897813249}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 257ef42cf85ec4042887696f4c8c0137, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1900010847
 GameObject:
   m_ObjectHideFlags: 0
@@ -13546,6 +13687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -14218,6 +14360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
@@ -14514,6 +14657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156efdffc9e80394e870664268f4509d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acScript: {fileID: 0}
   newsPanel: {fileID: 2048139870}
   hentchmenPanel: {fileID: 338045424}
   cityPanel: {fileID: 2028743254}
